@@ -2,17 +2,21 @@
     --main-color: DarkSeaGreen;
     --primary-color: OliveDrab;
     --secondary-color: #4d2c19;
-    --background-color: #f8f8f8;
-    --text-color: #4d2c19;
-    --header-background: AntiqueWhite;
-    --font-1: "tangerine", cursive;
-    --font-2: "Quicksand", sans-serif;
-    --font-3: "cormorant garamond", serif;
-    --font-4: "cinzel decorative", serif;
-    --font-size: 1em;
-    --header-font-size: 2em;
-    --footer-font-size: 1.2em;
-    --scroll-animation-duration: 0.5s;
+    --font-primary: 'Tangerine', cursive;
+    --font-secondary: 'Quicksand', sans-serif;
+}
+
+body {
+    font-family: var(--font-secondary);
+}
+
+h1, h2 {
+    font-family: var(--font-primary);
+}
+@font-face {
+    font-family: 'Tangerine';
+    src: url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
+    font-display: swap;
 }
 body {
     padding: 0;
@@ -382,7 +386,6 @@ body {
     font-size: 24px;
     padding: 5px;
     color: var(--secondary-color);
-    margin: 5px;
 }
 .section span{
     font-family: var(--font-3);
@@ -592,6 +595,7 @@ footer {
     transform: translateY(20px);
     transition: all 1s ease-in-out;
 }
+
 .fade-in-element.visible {
     opacity: 1;
     transform: translateY(0);
