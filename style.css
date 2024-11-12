@@ -1,0 +1,587 @@
+:root {
+    --main-color: DarkSeaGreen;
+    --primary-color: OliveDrab;
+    --secondary-color: #4d2c19;
+    --background-color: #f8f8f8;
+    --text-color: #4d2c19;
+    --header-background: AntiqueWhite;
+    --font-1: "tangerine", cursive;
+    --font-2: "Quicksand", sans-serif;
+    --font-3: "cormorant garamond", serif;
+    --font-4: "cinzel decorative", serif;
+    --font-size: 1em;
+    --header-font-size: 2em;
+    --footer-font-size: 1.2em;
+    --scroll-animation-duration: 0.5s;
+}
+body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    background-color: white;
+}
+#envelope {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    perspective: 1000px;
+    z-index: 10;
+}
+#envelope:hover {
+    transform: scale(1.05);
+}
+/* Parte superior del sobre (solapa) */
+#envelope-top {
+    top: 0;
+    border-bottom: none;
+}
+/* Parte inferior del sobre (cuerpo) */
+#envelope-bottom {
+    bottom: 0;
+    border-top: none;
+}
+#envelope-top, #envelope-bottom {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    background-image: url(/imagenes/F1.png);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.216);
+}
+/* Sello del sobre */
+#seal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 140px;
+    height: 140px;
+    background: darkolivegreen;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.216);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: opacity 1s ease-in-out;
+    z-index: 11;
+}
+#seal h2 {
+    margin: 0;
+    font-size: 30px;
+    color: white;
+    font-family: var(--font-3);
+    font-weight: 400;
+    font-style: italic;
+}
+
+#invitacion {
+    display: none;
+    background: transparent;
+    max-width: 800px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.sintillo{
+    position: relative;
+    width: 100%;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-top: -50px;
+    margin-bottom: -30px;
+    z-index: 2;
+}
+.sintillo::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/imagenes/div.play\ \(1\).png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;  
+}
+.sintillo h1{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    margin: 0;
+    font-family: var(--font-3);
+    font-weight: 400;
+    font-style: italic;
+    font-size: 55px;
+    white-space: nowrap;
+    margin-top: 60px;
+}
+.sintillo h2 {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    margin: 0;
+    font-family: var(--font-3);
+    font-weight: 400;
+    font-style: italic;
+    font-size: 70px;
+    white-space: nowrap;
+    margin-top: 190px;
+}
+.section , .section-playlist, .section-filter{
+    padding: 0;
+    transform: translateY(20px);
+    animation: fadeIn var(--scroll-animation-duration) ease-in forwards;
+}
+.section-filter{
+    background-color: #edf6f3b0;
+}
+.section-main {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    transform: translateY(20px);
+    animation: fadeIn var(--scroll-animation-duration) ease-in forwards;
+}
+.section-main img {
+    width: 100%;
+    height: auto;
+}
+.section-quote {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(/imagenes/div.play\ \(1\).png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 300px;
+    z-index: 2;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: -40px;
+    margin-bottom: -40px;
+}
+.section-quote h1 {
+    font-family: var(--font-3);
+    font-weight: 400;
+    font-style: italic;
+    font-size: 30px;
+    color: var(--secondary-color);
+    margin: 0;
+    padding: 0;
+}
+.section-main h2 {
+    top: 18%;
+    font-size: 50px;
+}
+.section-music{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(/imagenes/div.play\ \(1\).png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 300px;
+    z-index: 2;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: -40px;
+    margin-bottom: 0;
+}
+.section-music h2{
+    color: var(--secondary-color);
+    font-family: var(--font-3);
+    font-size: 20px;
+    font-weight: 400;
+    font-style: italic;
+}
+.section-countdown {
+    margin: 0;
+    padding: 0;
+    transform: translateY(20px);
+    animation: fadeIn var(--scroll-animation-duration) ease-in forwards;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.section-countdown h1 {
+    color: var(--secondary-color);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    font-family: var(--font-3);
+    font-size: 42px;
+    font-weight: 400;
+    font-style: italic;
+    padding: 10px;
+    margin: 0;
+}
+.section-countdown p {
+    margin: 0;
+    color: var(--secondary-color);
+    font-family: var(--font-3);
+    font-weight: 400;
+    font-style: italic;
+    font-size: 24px;
+    padding: 7px;
+}
+.section-countdown h2 {
+    color: var(--secondary-color);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    font-family: var(--font-3);
+    font-size: 1.5em;
+    font-weight: 400;
+    font-style: italic;
+    padding: 5px;
+    margin: 0;
+}
+#contador {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 0;
+}
+.countdown-circle {
+    width: 65px;
+    height: 65px;
+    background: rgba(143, 188, 143, 0.6);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+.countdown-circle span {
+    font-size: 1em;
+    color: white;
+    font-weight: 400;
+    padding: 0;
+    font-family: var(--font-3);
+    font-style: italic;
+}
+.section-calendar {
+    padding: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    width: 180px;
+    height: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-color: #dcdcdc37;
+    cursor: pointer;
+}
+.section-calendar a {
+    text-decoration: none;
+    font-family: var(--font-3);
+    color: var(--secondary-color);
+    font-style: italic;
+    font-size: 1.2em;
+}
+.section-calendar:hover {
+    background-color: white;
+}
+.section-calendar a:hover {
+    color: var(--main-color);
+}
+.section-b, .section-gifts{
+    position: relative;
+    width: 100%;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.section-b::before, .section-gifts::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/imagenes/div.play\ \(1\).png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+.section-b p, .section-playlist p {
+    font-family: var(--font-3);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 28px;
+    color: var(--secondary-color);
+}
+.section-b h1, .section-b h2 {
+    font-family: var(--font-3);
+    padding: 15px;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 40px;
+    margin-top: -10px;
+    margin-bottom: -10px;
+    color: var(--primary-color);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+.section h3{
+    margin-top: 50px;
+}
+.section h2, .section h3, .section-gifts h3, .section-filter h3, .section-playlist h3{
+    font-family: var(--font-3);
+    padding: 0;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 40px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: var(--secondary-color);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+.section p, .section-gifts p, .section-filter p{
+    font-family: var(--font-3);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 24px;
+    padding: 5px;
+    color: var(--secondary-color);
+    margin: 5px;
+}
+.section span{
+    font-family: var(--font-3);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.2em;
+    color: var(--secondary-color);
+    padding: 0;
+    margin: 0;
+}
+.icon {
+    padding: 0;
+    margin: 0;
+}
+.icon img {
+    width: 50%;
+    margin-top: -20px;
+    margin-bottom: -20px;
+}
+.galeria {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px;
+}
+.galeria img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+.galeria img:hover {
+    transform: scale(1.1);
+}
+.photo-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+.photo-modal img {
+    max-width: 80%;
+    max-height: 80%;
+    margin: auto;
+    display: block;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+}
+.close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+button {
+    background-color: var(--primary-color);
+    color: #fff;
+    border-radius: 5px;
+    font-family: var(--font-3);
+    padding: 10px;
+    transition: background-color 0.3s;
+    border: none;
+    font-size: 1em;
+    text-transform: none;
+    margin-bottom: 20px;
+    font-style: italic;
+    font-size: 1.2em;
+}
+button:hover {
+    background-color: var(--secondary-color);
+}
+footer {
+    padding: 20px;
+    background: #333;
+    color: white;
+    font-size: var(--footer-font-size);
+    width: 100%;
+    box-sizing: border-box;
+}
+.section-social-icons {
+    padding: 20px;
+}
+.section-social-icons a {
+    color: white;
+    margin: 0 10px;
+    text-decoration:none;
+}
+.section-social-icons i{
+    font-size: 35px;
+}
+.section-logo img{
+    margin-top: 0px;
+}
+/* Media Queries */
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* iPad Styles */
+    .seal{
+        width: 200px;
+        height: 200px;
+        }
+    .sealh h2{
+            font-size: 60px;
+        }
+    .section-music{
+        margin-top: -90px;
+        height: 500px;
+    }
+    .section-main h1, .section-main h2 {
+        font-size: 3em;
+    }
+
+    .section-countdown h1,
+    .section-countdown h2,
+    .section-b h1,
+    h1,
+    .section h2,
+    .section h3 {
+        font-size: 2.5em;
+    }
+
+    .section p,
+    .section-countdown p,
+    .section-calendar a {
+        font-size: 1.5em;
+    }
+}
+@media (min-width: 1025px) {
+    /* Laptop Styles */
+    .seal{
+    width: 200px;
+    height: 200px;
+    }
+    .sealh h2{
+        font-size: 60px;
+    }
+    .sintillo{
+        height: 500px;
+        margin-bottom: -80px;
+    }
+    .sintillo h1{
+        font-size: 120px;
+        margin-top: 10px;
+    }
+    .sintillo h2{
+        font-size: 150px;
+        margin-top: 280px;
+    }
+    .section-music{
+        margin-top: -90px;
+        height: 500px;
+    }
+    .section-music h2{
+        font-size: 50px;
+    }
+    .section-countdown h1,
+    .section-countdown h2,
+    .section-b h1,
+    h1,
+    .section h2,
+    .section h3 {
+        font-size: 3em;
+    }
+    .section p,
+    .section-countdown p,
+    .section-calendar a, .section-b p{
+        font-size: 1.8em;
+    }
+    .countdown-circle{
+        height: 180px;
+        width: 180px;
+    }
+    .countdown-circle span{
+        font-size: 50px;
+    }
+    .section-quote{
+        height: 500px;
+        margin-top: -90px;
+        margin-bottom: -90px;
+    }
+    .section-social-icons i{
+        font-size: 55px;
+        margin-top: 50px;
+    }
+    .section-logo img{
+        margin-top: 0px;
+    }
+}
+.fade-in-element {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1s ease-in-out;
+}
+.fade-in-element.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
