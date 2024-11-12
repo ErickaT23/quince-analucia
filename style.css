@@ -339,7 +339,7 @@ body {
     font-size: 28px;
     color: var(--secondary-color);
 }
-.section-b h1, .section-b h2 {
+.section-b h1, .section-b h2, .section h1{
     font-family: var(--font-3);
     padding: 15px;
     font-weight: 400;
