@@ -59,6 +59,10 @@ body {
     transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
     background-image: url(/imagenes/F1.png);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.216);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
 }
 /* Sello del sobre */
 #seal {
